@@ -27,7 +27,7 @@ Use a three-layer memory system:
 
 ## Retrieval Rules
 - Retrieval is trigger-based, not automatic
-- Each agent must check .ai/brain_state.json before tool use
+- Each agent must check config/brain_state.json before tool use
 - If a task needs context, retrieve the smallest relevant slice
 - Favor dense, structured retrieval over long prompt dumps
 
@@ -56,6 +56,6 @@ Tokenmaxxing is over. Modelmaxxing means using smaller, denser reasoning prompts
 - Agent reasons over that packet instead of reading the whole repo
 
 ## Repository Integration
-- Main state store: .ai/brain_state.json
+- Main state store: config/brain_state.json
 - Indexing source: local repository files and docs
 - Access path: .ai/mcp/setup.json and .ai/mcp/available_mcp_registry.md

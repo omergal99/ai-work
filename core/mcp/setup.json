@@ -24,7 +24,7 @@
         "mcp_server_memory"
       ],
       "env": {
-        "MEMORY_PATH": "/home/omer/DEV/ai-4/.ai/brain_state.json"
+        "MEMORY_PATH": "/home/omer/DEV/ai-4/ai-working-confing/config/brain_state.json"
       }
     },
     {

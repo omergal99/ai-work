@@ -1,45 +1,41 @@
 DOC_ID: AI_CONFIG_01
 Keywords: agent-config, orchestration, evals, skills, prompts
 
-OVERVIEW
-This folder is the local AI operating system for the workspace.
+# AI Working Config
 
-PURPOSE
-Make agent work predictable, scalable, evaluable, and maintainable.
+## What this repository is
+This repository is a compact AI operating system for agents and humans working across a workspace.
+Its purpose is to make agent work more predictable, more reusable, and easier to review by keeping shared rules, context, workflows, evaluation guidance, and knowledge in one coherent place.
 
-PRIMARY LAYERS
-- core state: .ai/brain_state.json
-- memory and retrieval: .ai/context_lake_blueprint.md
-- local swarm execution: .ai/jcode_swarm_rules.md
-- adoption roadmap: .ai/adoption_playbook.md
-- GenAI Flow product layer: .ai/genai-flow/
-- repository intelligence: .ai/repository-intelligence/
-- evals and drift detection: .ai/evals/
-- multi-agent control plane: .ai/control-plane/
-- operational discipline: .ai/ops/
-- knowledge packs: .ai/knowledge/
-- reusable templates: .ai/templates/
+## Why it exists
+The goal is not to force one rigid process. The goal is to give every agent and every developer a shared baseline for how to work:
+- preserve context and memory
+- keep workflows structured
+- reduce hallucination through evidence and review
+- make handoffs and collaboration clearer
+- keep knowledge reusable across projects and tools
 
-STRUCTURE
-- personas: role definitions
-- protocols: contracts and rules
-- orchestration: execution model and state handoffs
-- prompts: reusable prompts
-- skills: reusable instructions
-- mcp: tool exposure and server config
-- ops: history, standards, and maintenance
-- knowledge: curated design and roadmap content
+## Main layers
+- config/ — the first-read layer for shared state, memory, and onboarding guidance
+- core/ — the consolidated operational layer for agents, protocols, prompts, skills, templates, ops, and related standards
+- genai-flow/ — product-level guidance for LLM behavior, RAG, drift handling, and evaluation
+- knowledge/ — curated design, roadmap, adoption, efficiency, and token guidance
+- docs/ — roadmap and next-step notes
 
-OPERATING RULES
-- Read the shared state before using tools.
-- Keep state explicit, not implicit in chat history.
-- Prefer retrieval and structured context over large prompt dumping.
-- Update the index when structure or purpose changes.
-- Preserve session history in .ai/ops/history.
+## How to use it
+1. Start with this README.
+2. Read config/README.md for the first-stop rules.
+3. Read core/README.md for the consolidated operating structure.
+4. Open the relevant section in genai-flow/ or knowledge/ for the task at hand.
+5. Keep shared state explicit, reviewable, and evidence-based.
 
-USE
-1. Start with .ai/README.md
-2. Read .ai/INDEX.md
-3. Load the relevant persona, prompt, and skill
-4. Use the shared state manifest
-5. Run evals before shipping
+## Simple mental model
+```text
+Shared config -> core operating rules -> agent roles -> workflows -> evals -> better outcomes
+```
+
+## Suggested next additions
+- a shared agent registry
+- a lightweight decision log format
+- template-driven workflow examples for common agent tasks
+- more eval cases for drift, retrieval quality, and review quality

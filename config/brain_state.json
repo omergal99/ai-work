@@ -25,7 +25,7 @@
       "status": "active",
       "owner": "system",
       "token_budget": 120000,
-      "memory_graph_pointer": ".ai/brain_state.json",
+      "memory_graph_pointer": "config/brain_state.json",
       "mode": "hierarchical"
     },
     "planner": {
@@ -33,7 +33,7 @@
       "status": "active",
       "owner": "system",
       "token_budget": 80000,
-      "memory_graph_pointer": ".ai/context_lake_blueprint.md",
+      "memory_graph_pointer": "config/context_lake_blueprint.md",
       "mode": "structured"
     },
     "coder": {
@@ -41,7 +41,7 @@
       "status": "active",
       "owner": "system",
       "token_budget": 90000,
-      "memory_graph_pointer": ".ai/jcode_swarm_rules.md",
+      "memory_graph_pointer": "config/jcode_swarm_rules.md",
       "mode": "tool-driven"
     },
     "reviewer": {
@@ -74,7 +74,7 @@
       "target_parallel_agents": 1000,
       "token_policy": "budgeted",
       "retrieval_mode": "agentic_graph_rag",
-      "default_state_source": ".ai/brain_state.json",
+      "default_state_source": "config/brain_state.json",
       "context_lake_enabled": true,
       "mcp_enabled": true,
       "evals_required_before_ship": true

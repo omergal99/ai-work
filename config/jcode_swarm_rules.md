@@ -13,7 +13,7 @@ jcode is treated as a local-first, high-efficiency coding swarm runtime. It is o
 - One orchestrator manages tasks and state
 - Multiple specialists run in parallel on the same repository
 - Each agent owns a narrow scope and only writes to allowed paths
-- Shared state lives in .ai/brain_state.json and is read before every write
+- Shared state lives in config/brain_state.json and is read before every write
 
 ## Control Plane Principles
 - Maintain a central registry of active agents and tasks
