@@ -1,0 +1,17 @@
+{
+  "task_id": "example-task",
+  "description": "Example eval case",
+  "input": {},
+  "expected_outcome": {},
+  "graders": [
+    {
+      "type": "deterministic",
+      "check": "assert outcome"
+    }
+  ],
+  "metrics": {
+    "latency_ms": null,
+    "token_usage": null,
+    "pass": false
+  }
+}

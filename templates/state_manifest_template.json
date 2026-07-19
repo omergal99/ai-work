@@ -1,0 +1,9 @@
+{
+  "task_id": "example-task",
+  "status": "pending",
+  "artifacts": [],
+  "locks": [],
+  "notes": [],
+  "idempotency_key": "example-key",
+  "last_updated": null
+}

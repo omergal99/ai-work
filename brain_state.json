@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.0.0",
+  "project_name": "ai-4",
+  "project_root": "/home/omer/DEV/ai-4",
+  "repositories": [
+    {
+      "name": "aligned-ai-poc",
+      "path": "aligned-ai-poc",
+      "focus": "multi-tenant AI application"
+    },
+    {
+      "name": "gen-ai-flow-explorer",
+      "path": "gen-ai-flow-explorer",
+      "focus": "developer-facing flow explorer and agent documentation"
+    },
+    {
+      "name": "roadmap-agent",
+      "path": "roadmap-agent",
+      "focus": "agent planning frontend and orchestration"
+    }
+  ],
+  "agent_registry": {
+    "orchestrator": {
+      "id": "agent-orchestrator",
+      "status": "active",
+      "owner": "system",
+      "token_budget": 120000,
+      "memory_graph_pointer": ".ai/brain_state.json",
+      "mode": "hierarchical"
+    },
+    "planner": {
+      "id": "agent-planner",
+      "status": "active",
+      "owner": "system",
+      "token_budget": 80000,
+      "memory_graph_pointer": ".ai/context_lake_blueprint.md",
+      "mode": "structured"
+    },
+    "coder": {
+      "id": "agent-coder",
+      "status": "active",
+      "owner": "system",
+      "token_budget": 90000,
+      "memory_graph_pointer": ".ai/jcode_swarm_rules.md",
+      "mode": "tool-driven"
+    },
+    "reviewer": {
+      "id": "agent-reviewer",
+      "status": "active",
+      "owner": "system",
+      "token_budget": 70000,
+      "memory_graph_pointer": ".ai/protocols/evals.md",
+      "mode": "verification"
+    }
+  },
+  "state": {
+    "active_tasks": [
+      {
+        "task_id": "task-001",
+        "scope": "builder-explorer-docs",
+        "status": "in_progress"
+      }
+    ],
+    "locks": [
+      {
+        "path": "gen-ai-flow-explorer/docs",
+        "owner": "agent-orchestrator",
+        "status": "locked",
+        "reason": "documentation and blueprint coordination"
+      }
+    ],
+    "system_variables": {
+      "max_parallel_agents": 100,
+      "target_parallel_agents": 1000,
+      "token_policy": "budgeted",
+      "retrieval_mode": "agentic_graph_rag",
+      "default_state_source": ".ai/brain_state.json",
+      "context_lake_enabled": true,
+      "mcp_enabled": true,
+      "evals_required_before_ship": true
+    }
+  },
+  "policy": {
+    "read_before_tool_use": true,
+    "write_through_state_manifest": true,
+    "idempotency_required": true,
+    "context_lake_triggered_retrieval": true,
+    "modelmaxxing": true,
+    "audit_logs_required": true
+  }
+}

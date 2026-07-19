@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0.0",
+  "type": "object",
+  "properties": {
+    "agent_id": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["idle", "running", "blocked", "error", "offline"]
+    },
+    "token_budget": {
+      "type": "integer"
+    },
+    "current_task": {
+      "type": ["string", "null"]
+    },
+    "state_pointer": {
+      "type": "string"
+    },
+    "health_score": {
+      "type": "number"
+    },
+    "last_update": {
+      "type": ["string", "null"]
+    },
+    "permissions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "agent_id",
+    "role",
+    "status",
+    "token_budget",
+    "state_pointer"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "task_id": "example-flow-task",
+  "description": "Create a concise flow summary from repository docs",
+  "input": {
+    "repo": "gen-ai-flow-explorer",
+    "source_docs": [
+      "docs/PRD.md",
+      "docs/BLUEPRINT.md"
+    ]
+  },
+  "expected_outcome": {
+    "summary_length": "short",
+    "contains_key_topics": true,
+    "uses_structured_format": true
+  },
+  "graders": [
+    {
+      "type": "deterministic",
+      "check": "summary contains core topics"
+    },
+    {
+      "type": "rubric",
+      "check": "clarity and correctness"
+    }
+  ],
+  "metrics": {
+    "latency_ms": null,
+    "token_usage": null,
+    "pass": false
+  }
+}

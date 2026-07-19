@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0.0",
+  "project_root": "/home/omer/DEV/ai-4",
+  "default_transport": "stdio",
+  "servers": [
+    {
+      "name": "filesystem",
+      "enabled": true,
+      "transport": "stdio",
+      "command": "npx",
+      "args": [
+        "@modelcontextprotocol/server-filesystem",
+        "/home/omer/DEV/ai-4"
+      ],
+      "env": {}
+    },
+    {
+      "name": "memory",
+      "enabled": true,
+      "transport": "stdio",
+      "command": "python",
+      "args": [
+        "-m",
+        "mcp_server_memory"
+      ],
+      "env": {
+        "MEMORY_PATH": "/home/omer/DEV/ai-4/.ai/brain_state.json"
+      }
+    },
+    {
+      "name": "git",
+      "enabled": true,
+      "transport": "stdio",
+      "command": "python",
+      "args": [
+        "-m",
+        "mcp_server_git"
+      ],
+      "env": {
+        "REPO_ROOT": "/home/omer/DEV/ai-4"
+      }
+    },
+    {
+      "name": "browser_bridge",
+      "enabled": false,
+      "transport": "stdio",
+      "command": "python",
+      "args": [
+        "-m",
+        "mcp_server_browser"
+      ],
+      "env": {}
+    }
+  ],
+  "routing": {
+    "read_only_tools": [
+      "filesystem.read_file",
+      "filesystem.list_dir",
+      "memory.read_state",
+      "git.status"
+    ],
+    "write_tools": [
+      "filesystem.write_file",
+      "memory.update_state",
+      "git.commit"
+    ],
+    "guardrails": {
+      "require_state_read_before_write": true,
+      "require_idempotency_key": true,
+      "max_parallel_tool_calls": 8
+    }
+  }
+}
