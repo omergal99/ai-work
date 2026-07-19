@@ -1,0 +1,23 @@
+name: AI Config Validation
+on:
+  pull_request:
+    paths:
+      - '.ai/**'
+      - 'ci/precommit/**'
+      - '.github/workflows/ai-config-validation.yml'
+      - 'tests/**'
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python and tooling
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install pyyaml
+      - name: Run linters and token checks
+        run: bash ci/precommit/run-linters.sh
+      - name: Run policy checks
+        run: bash ci/precommit/policy-check.sh
+      - name: Run evals
+        run: bash ci/precommit/run-evals.sh

@@ -1,0 +1,8 @@
+entrypoint: main_agent
+agent_types:
+  - name: code-assistant
+    skills: ["lint", "eval", "commit-draft"]
+    policies: "../policies.yaml"
+  - name: triage-assistant
+    skills: ["triage", "label", "doc-create"]
+    policies: "../policies.yaml"

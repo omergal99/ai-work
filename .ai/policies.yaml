@@ -1,0 +1,22 @@
+version: 1
+history_retention_days: 30
+evals:
+  required_for: ["code-gen", "schema-change"]
+  default_timeout_seconds: 30
+token_budget:
+  default: 1500
+  hard_limit: 4000
+memory:
+  allowed: false
+  long_term_store: "external-secure-store"
+secrets:
+  allow_in_repo: false
+  storage: "vault"
+logging:
+  session_metadata_only: true
+  redact_patterns: ["email", "ssn", "credit_card"]
+security:
+  require_signed_releases: true
+  rbac:
+    read: ["all_agents"]
+    write: ["maintainers"]

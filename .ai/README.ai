@@ -1,0 +1,3 @@
+Purpose: Compact AI config for repo intent and agent entrypoint.
+Context: agent-config; orchestration; evals
+Policies: history=30d; evals=required for code-gen; token_budget=1500; Entrypoint: .ai/.agents/setup.yaml; Index: .ai/index.json

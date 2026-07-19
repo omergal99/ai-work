@@ -1,7 +1,7 @@
 DOC_ID: AI_CONFIG_01
 Keywords: agent-config, orchestration, evals, skills, prompts
 
-# AI Working Config
+# AI Work Config
 
 ## What this repository is
 This repository is a compact AI operating system for agents and humans working across a workspace.
